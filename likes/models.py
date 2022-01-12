@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from posts.models import Post
 
 
-class Likes(models.Model):
+class Like(models.Model):
     """
     Like model, related to 'owner' and 'post'.
     'owner' is a User instance and 'post' is a Post instance.
