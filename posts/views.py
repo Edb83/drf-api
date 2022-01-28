@@ -19,6 +19,12 @@ class PostList(generics.ListCreateAPIView):
 
     filter_backends = [
         filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+
+    search_fields = [
+        'owner__username',
+        'title',
     ]
 
     ordering_fields = [
