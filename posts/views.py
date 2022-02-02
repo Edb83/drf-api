@@ -25,9 +25,9 @@ class PostList(generics.ListCreateAPIView):
     ]
 
     filterset_fields = [
-        'owner__followed__owner__profile',
-        'likes__owner__profile',
-        'owner__profile',
+        'owner__followed__owner__profile', # posts owned by a followed user
+        'likes__owner__profile', # posts liked by a user
+        'owner__profile', # posts owned by a user
     ]
 
     search_fields = [
