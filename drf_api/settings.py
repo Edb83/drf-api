@@ -93,27 +93,21 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.messages',
     'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.staticfiles',
-
-    'corsheaders',
-
-    'cloudinary',
+    'django.contrib.messages',
     'cloudinary_storage',
-
+    'django.contrib.staticfiles',
+    'cloudinary',
     'rest_framework',
+    'django_filters',
     'rest_framework.authtoken',
-
     'dj_rest_auth',
-    'dj_rest_auth.registration',
-
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    'django_filters',
+    'dj_rest_auth.registration',
+    'corsheaders',
 
     # Custom
     'profiles',
