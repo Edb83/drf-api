@@ -72,33 +72,18 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN'),
+        os.environ.get('CLIENT_ORIGIN_DEV')
+    ]
 
-CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CLIENT_ORIGIN'),
-    os.environ.get('CLIENT_DEV_ORIGIN'),
-
-]
-# if 'CLIENT_ORIGIN' in os.environ:
-#     CORS_ALLOWED_ORIGINS = [
-#         os.environ.get('CLIENT_ORIGIN')
-#     ]
-
-# if 'CLIENT_ORIGIN_DEV' in os.environ:
-#     CORS_ALLOWED_ORIGINS = [
-#         os.environ.get('CLIENT_DEV_ORIGIN')
-#     ]
-
-# else:
-#     CORS_ALLOWED_ORIGIN_REGEXES = [
-#         r"^https://.*\.gitpod\.io$",
-#     ]
-
-# if 'CLIENT_ORIGIN_DEV' in os.environ:
-#     extracted_url = re.match(
-#         r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-#     CORS_ALLOWED_ORIGIN_REGEXES = [
-#         rf"{extracted_url}(eu|us)\d+\.gitpod\.io$",
-#     ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(
+        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\.gitpod\.io$",
+    ]
 
 
 # allows cookies in cross-origin requests to allow authentication
