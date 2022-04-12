@@ -76,7 +76,7 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN', ''),
     os.environ.get('CLIENT_ORIGIN_DEV', '')
-    # ]
+    ]
 
 # if 'CLIENT_ORIGIN_DEV' in os.environ:
 #     extracted_url = re.match(
